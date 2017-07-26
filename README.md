@@ -1,15 +1,18 @@
 # TopicImages
 
-By: Daniel Rendon Montaño - drendon9@eafit.educo
+By: Daniel Rendon Montaño - drendon9@eafit.edu.co
 
 # 1. Descripción de aplicación
 
 * Aplicación web que permite a los usuarios la gestion completa de imágenes.
 * Los usuarios pueden crear una cuenta para ingresar a la aplicación, igualmente la pueden eliminar si lo desean.
-* Los usuarios que entren con una cuenta podrán subir sus imágenes de manera pública o privada. El contenido público podrá ser visualizado por cualquier usuario en el sistema, mientras el privado sólo podra ser visualizado por el propietario de éste.
+* Los usuarios que entren con una cuenta podrán subir sus imágenes de manera pública o privada. El contenido público
+podrá ser visualizado por cualquier usuario en el sistema, mientras el privado sólo podra ser visualizado por
+el propietario de éste.
 * El pripietario del contenido tiene la capacidad de cambiar un contenido de público a privado y viceversa.
 * Las imágenes se manejan a nivel de metadatos.
-* La aplicación permite la navegación en la pantalla general, montrando el contenido público, y ademas se cuenta con una barra de búsquedas para filtrar dicho contenido por usuario.
+* La aplicación permite la navegación en la pantalla general, montrando el contenido público, y ademas se cuenta
+con una barra de búsquedas para filtrar dicho contenido por usuario.
 
 # 2. Análisis
 
