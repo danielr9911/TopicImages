@@ -20,7 +20,12 @@
     "method-override": "^2.3.0",
     "glob": "^6.0.4",
     "mongoose": "^4.1.2",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "express-validator": "^3.2.1",
+    "express-session": "^1.15.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "bcryptjs":"^2.4.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
