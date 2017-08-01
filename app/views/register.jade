@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h2(class='page-header') Registro
+
+  if errors
+    each err in errors
+      .alert.alert-danger #{err.msg}
+
+  form(method='post', action='/register')
+    .form-group
+      label Nombre
+      input.form-control(type='text', placeholder='Nombre', name='name')
+    .form-group
+      label Usuario
+      input.form-control(type='text', placeholder='Usuario', name='username')
+    .form-group
+      label Email
+      input.form-control(type='email', placeholder='Email', name='email')
+    .form-group
+      label Contraseña
+      input.form-control(type='password', placeholder='Contraseña', name='password')
+    .form-group
+      label Confirmar contraseña
+      input.form-control(type='password', placeholder='Contraseña', name='password2')
+    .form-group.text-right
+      input(type="submit" class="btn btn-info" value="Registrar")

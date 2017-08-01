@@ -1,0 +1,34 @@
+<h2 class="page-header">Configuracion de la cuenta</h2>
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">{{msg}}</div>
+  {{/each}}
+{{/if}}
+<form method="post" action="/register">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input type="text" class="form-control" placeholder="Nombre" name="name">
+  </div>
+  <div class="form-group">
+    <label>Usuario</label>
+    <input type="text" class="form-control" placeholder="Usuario" name="username" value="drendon9" disabled>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Contraseña</label>
+    <input type="password" class="form-control" placeholder="Contraseña" name="password">
+  </div>
+  <div class="form-group">
+    <label>Confirmar contraseña</label>
+    <input type="password" class="form-control" placeholder="Contraseña" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Registrar</button>
+
+  <div class="text-center">
+    <label class='small text-center'>¿Tienes una cuenta? <a href="/login"> Ingresa </a></label>
+  </div>
+
+</form>

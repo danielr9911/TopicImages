@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TopicImages</title>
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+
+    document.getElementById("Delete").onclick = function fun()
+    {
+      alert("hello");
+      //validation code to see State field is mandatory.
+    }
+
+    function f1()
+    {
+      alert("f1 called");
+      //form validation that recalls the page showing with supplied inputs.
+    }
+
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        {{#if user}}
+          <li role="presentation"><a href="/public">Contenido público</a></li>
+          <li role="presentation"><a href="/perfil">Mi contenido</a></li>
+          <li role="presentation"><a href="/upload">Subir</a></li>
+          <li role="presentation"><a href="/account">Cuenta</a></li>
+          <li role="presentation"><a href="/logout">Logout</a></li>
+        {{else}}
+          <li role="presentation"><a href="/login">Login</a></li>
+          <li role="presentation"><a href="/register">Register</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+    <h3 class="text-muted"><a href="/">TopicImages</a></h3>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-12">
+      {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+      {{/if}}
+
+      {{#if error_msg}}
+        <div class="alert alert-danger">{{error_msg}}</div>
+      {{/if}}
+
+      {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+      {{/if}}
+
+      {{{body}}}
+    </div>
+
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2017 TopicImages by Daniel Rendón M.</p>
+  </footer>
+
+</div> <!-- /container -->
+</body>
+</html>

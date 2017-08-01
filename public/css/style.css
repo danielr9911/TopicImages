@@ -79,9 +79,13 @@ body {
 }
 
 .page-header{
-  margin-top:0;
+  margin-top:25px;
 }
 
 footer{
   margin-top:40px;
+}
+
+.header2{
+  margin-top:0px;
 }

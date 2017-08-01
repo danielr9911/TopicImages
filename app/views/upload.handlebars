@@ -1,0 +1,19 @@
+<h2 class="page-header">Subir imagen</h2>
+<form method="post" action="/upload" enctype = "multipart/form-data">
+  <div class="form-group">
+    <label>Título</label>
+    <input type="text" class="form-control" name="titulo" placeholder="Título">
+  </div>
+  <div class="form-group">
+    <label>Descripción</label>
+    <textarea class="form-control" name="descripcion" placeholder="Descripción de la imagen"></textarea>
+  </div>
+  <div>
+    <label>Imagen</label>
+    <input type="file" name="imagen">
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" class="" name="privado"> Privado</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Subir</button>
+</form>

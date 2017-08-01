@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2(class="page-header") Login
+
+  if errors
+    each err in errors
+      .alert.alert-danger #{err.msg}
+
+  form(method="post" action="/login")
+    div(class="form-group")
+      label Usuario
+      input(type="text" class ='form-control' name="username" placeholder="Usuario")
+    div(class="form-group")
+      label Contraseña
+      input(type="password" class='form-control' name="password" placeholder="Contraseña")
+    div(class="form-group text-right")
+      input(type="submit" class="btn btn-info" value="Ingresar")

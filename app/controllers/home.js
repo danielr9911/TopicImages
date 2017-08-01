@@ -1,3 +1,4 @@
+
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
@@ -6,7 +7,7 @@ var express = require('express'),
 module.exports = function (app) {
   app.use('/', router);
 };
-
+/*
 router.get('/', function (req, res, next) {
   Article.find(function (err, articles) {
     if (err) return next(err);
@@ -16,3 +17,5 @@ router.get('/', function (req, res, next) {
     });
   });
 });
+*/
+

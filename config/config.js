@@ -17,7 +17,7 @@ var config = {
     app: {
       name: 'topicimages'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     db: 'mongodb://localhost/topicimages-test'
   },
 
@@ -26,7 +26,7 @@ var config = {
     app: {
       name: 'topicimages'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     db: 'mongodb://localhost/topicimages-production'
   }
 };
