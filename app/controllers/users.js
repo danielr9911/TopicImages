@@ -106,7 +106,14 @@ router.get('/logout', function(req, res){
 
 //Configuracion de cuenta
 router.get('/account', function (req, res) {
-  res.render('account');
+  User.getUserByUsername(req.user.username, function (err, user) {
+    console.log(user);
+    res.render('account', {usuario: user});
+  });
 });
+
+router.post('/account', function (req, res) {
+    res.render('account')
+  });
 
 //module.exports = router;
