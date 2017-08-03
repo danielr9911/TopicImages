@@ -2,13 +2,16 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcryptjs');
+
+var mongoose = require('mongoose');
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
 var User = require('../models/user');
-
+var Imagen = mongoose.model('Imagen');
 // Registro
 router.get('/register', function(req, res){
   res.render('register');
@@ -96,7 +99,7 @@ router.post('/login',
     res.redirect('/public');
   });
 
-router.get('/logout', function(req, res){
+router.get('/logout', ensureAuthenticated, function(req, res){
   req.logout();
 
   req.flash('success_msg', 'Desconectado exitosamente');
@@ -105,7 +108,7 @@ router.get('/logout', function(req, res){
 });
 
 //Configuracion de cuenta
-router.get('/account', function (req, res) {
+router.get('/account', ensureAuthenticated, function (req, res) {
   User.getUserByUsername(req.user.username, function (err, user) {
     console.log(user);
     res.render('account', {usuario: user});
@@ -113,7 +116,80 @@ router.get('/account', function (req, res) {
 });
 
 router.post('/account', function (req, res) {
-    res.render('account')
+  var userData = {
+    name: req.body.name,
+    email: req.body.email
+  };
+  var userId = req.user._id;
+  console.log(userId);
+  User.update({"_id":userId}, userData, function () {
+    res.redirect('/account');
   });
+});
 
+router.delete('/deleteAccount', function (req, res) {
+  var userId = req.user._id;
+  var userName = req.user.username;
+  User.remove({"_id":userId},function (err) {
+    if (err){console.log(err);}
+    Imagen.remove({"usuario":userName},function (err) {
+      if (err){console.log(err);}
+    });
+    res.redirect("/");
+  });
+});
+
+router.post('/changePassword', function(req, res) {
+  var usuario = req.user.username;
+  var clave = req.body.passwordAct;
+  var nuevaClave = req.body.password;
+  var repetirClave = req.body.password2;
+
+  if (nuevaClave === repetirClave) {
+    var coinciden = true;
+  }
+  console.log(coinciden);
+
+  User.findOne({"username": usuario}, function (err, user) {
+    console.log(user.password);
+    User.comparePassword(clave, req.user.password, function (err, isMatch) {
+      if (isMatch) {
+        console.log(isMatch);
+        if (!coinciden) {
+          req.flash('error_msg','Las contraseñas no coinciden');
+          res.redirect('/account')
+        }else{
+          bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(nuevaClave, salt, function (err, hash) {
+              var claveNueva = hash;
+              console.log(claveNueva);
+
+              var claveData = {
+                password : claveNueva
+              };
+              User.update({"username": usuario}, claveData , function () {
+                req.flash('success_msg', 'Contraseña cambiada exitosamente');
+                res.redirect("/account")
+              });
+            });
+          });
+        }
+      }else{
+        req.flash('error_msg', 'Contraseña incorrecta');
+        res.redirect('/account')
+      }
+    });
+  });
+});
+
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  } else {
+    //req.flash('error_msg','You are not logged in');
+    res.redirect('/login');
+  }
+}
 //module.exports = router;
+
+

@@ -25,7 +25,7 @@
 </form>
 
 <h2 class="page-header">Cambiar contraseña</h2>
-<form method="post" action="/password">
+<form method="post" action="/changePassword">
   <div class="form-group">
     <label>Contraseña actual</label>
     <input type="password" class="form-control" placeholder="Contraseña actual  " name="passwordAct">
@@ -43,6 +43,6 @@
 </form>
 
 <h2 class="page-header">Eliminar cuenta</h2>
-<form method="post" action="/delete/{{imagen.id}}?_method=delete">
+<form method="post" action="/deleteAccount?_method=delete">
   <button type="submit" class="btn btn-danger btn-lg btn-block">Eliminar mi cuenta permanentemente</button>
 </form>

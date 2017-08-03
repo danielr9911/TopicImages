@@ -19,7 +19,7 @@ module.exports = function (app) {
 };
 
 // Perfil
-router.get('/perfil', function(req, res){
+router.get('/perfil', ensureAuthenticated, function(req, res){
   Imagen.find({usuario:req.user.username},function (err, documento) {
     if(err){console.log(err);}
     res.render('perfil',{username:req.user.username, imagenes:documento});
@@ -27,7 +27,7 @@ router.get('/perfil', function(req, res){
 });
 
 // Contenido publico
-router.get('/public', function(req, res){
+router.get('/public', ensureAuthenticated, function(req, res){
   Imagen.find({privado:"false"},function (err, documento) {
     if(err){console.log(err);}
     res.render('public', {username:req.user.username,imagenes:documento});
@@ -42,7 +42,7 @@ router.post('/buscar', function(req, res){
 });
 
 // Upload
-router.get('/upload', function(req, res){
+router.get('/upload', ensureAuthenticated, function(req, res){
   res.render('upload',{username:req.user.username});
 });
 
@@ -55,7 +55,7 @@ router.delete('/delete/:id',function (req, res) {
   });
 });
 
-router.get('/edit/:id', function (req, res) {
+router.get('/edit/:id', ensureAuthenticated, function (req, res) {
   var id_img = req.params.id;
   Imagen.findOne({"_id":id_img},function (err, image) {
     res.render('edit',{username:req.user.username, imagen:image});
@@ -103,6 +103,15 @@ router.post("/upload", upload.single('imagen'), function(req, res){
       });
     }
   );
-})
+});
+
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  } else {
+    //req.flash('error_msg','You are not logged in');
+    res.redirect('/login');
+  }
+}
 
 
