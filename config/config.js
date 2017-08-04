@@ -27,7 +27,7 @@ var config = {
       name: 'topicimages'
     },
     port: process.env.PORT || 3002,
-    db: 'mongodb://localhost/topicimages-production'
+    db: 'mongodb://drendon9:puoOFR62@ds135963.mlab.com:35963/topicimages'
   }
 };
 
