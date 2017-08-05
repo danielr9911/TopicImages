@@ -12,17 +12,27 @@ module.exports = function (app) {
 
 var User = require('../models/user');
 var Imagen = mongoose.model('Imagen');
-// Registro
+
+/* Servicio Web: Entrada al formato de Registro de usuarios.
+  Método: GET
+  URI: /register
+*/
 router.get('/register', function(req, res){
   res.render('register');
 });
 
-// Login
+/* Servicio Web: Entrada al formato de Inicio de sesión.
+  Método: GET
+  URI: /login
+*/
 router.get('/login', function(req, res){
   res.render('login');
 });
 
-// Register User
+/* Servicio Web: Inserta un Nuevo Usuario en la Base de datos
+  Método: POST
+  URI: /registrar
+*/
 router.post('/register', function(req, res){
   var name = req.body.name;
   var email = req.body.email;
@@ -93,12 +103,20 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+/* Servicio Web: Realiza la autenticación del usuario para ingresar.
+  Método: POST
+  URI: /login
+*/
 router.post('/login',
   passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash: true}),
   function(req, res) {
     res.redirect('/public');
   });
 
+/* Servicio Web: Finaliza la sesión actual y redirige al formato de Inicio de sesión.
+  Método: GET
+  URI: /logout
+*/
 router.get('/logout', ensureAuthenticated, function(req, res){
   req.logout();
 
@@ -107,7 +125,10 @@ router.get('/logout', ensureAuthenticated, function(req, res){
   res.redirect('/login');
 });
 
-//Configuracion de cuenta
+/* Servicio Web: Busca y muestra los datos del usuario en la Base de datos.
+     Método: GET
+     URI: /account
+*/
 router.get('/account', ensureAuthenticated, function (req, res) {
   User.getUserByUsername(req.user.username, function (err, user) {
     console.log(user);
@@ -115,6 +136,10 @@ router.get('/account', ensureAuthenticated, function (req, res) {
   });
 });
 
+/* Servicio Web: Modifica los datos del usuario en la Base de datos.
+  Método: POST
+  URI: /account
+*/
 router.post('/account', function (req, res) {
   var userData = {
     name: req.body.name,
@@ -127,6 +152,10 @@ router.post('/account', function (req, res) {
   });
 });
 
+/* Servicio Web: Elimina el usuario y sus archivos de la Base de datos.
+  Método: DELETE
+  URI: /deleteAccount
+*/
 router.delete('/deleteAccount', function (req, res) {
   var userId = req.user._id;
   var userName = req.user.username;
@@ -139,6 +168,10 @@ router.delete('/deleteAccount', function (req, res) {
   });
 });
 
+/* Servicio Web: Modifica la contraseña en la Base de datos.
+  Método: POST
+  URI: /changePassword
+*/
 router.post('/changePassword', function(req, res) {
   var usuario = req.user.username;
   var clave = req.body.passwordAct;

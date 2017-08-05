@@ -18,7 +18,10 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-// Perfil
+/* Servicio Web: Despliega la lista de imagenes subidos por el usuario en la sesión actual.
+     Método: GET
+     URI: /perfil
+*/
 router.get('/perfil', ensureAuthenticated, function(req, res){
   Imagen.find({usuario:req.user.username},function (err, documento) {
     if(err){console.log(err);}
@@ -26,7 +29,11 @@ router.get('/perfil', ensureAuthenticated, function(req, res){
   })
 });
 
-// Contenido publico
+/* Servicio Web: Busca y muestra todas las imagenes en estado publico subidos por los usuarios
+                 en la Base de datos.
+     Método: GET
+     URI: /public
+*/
 router.get('/public', ensureAuthenticated, function(req, res){
   Imagen.find({privado:"false"},function (err, documento) {
     if(err){console.log(err);}
@@ -34,6 +41,10 @@ router.get('/public', ensureAuthenticated, function(req, res){
   });
 });
 
+/* Servicio Web: Filtra las imagenes publicas por usuario y los muestra.
+     Método: POST
+     URI: /buscar
+*/
 router.post('/buscar', function(req, res){
   Imagen.find({usuario:req.body.buscar, privado:"false"},function (err, documento) {
     if(err){console.log(err);}
@@ -41,12 +52,18 @@ router.post('/buscar', function(req, res){
   });
 });
 
-// Upload
+/* Servicio Web: Entrada al formato de subir un archivo.
+     Método: GET
+     URI: /upload
+*/
 router.get('/upload', ensureAuthenticated, function(req, res){
   res.render('upload',{username:req.user.username});
 });
 
-//Delete
+/* Servicio Web: Elimina la publicación de la Base de datos.
+  Método: DELETE
+  URI: /delete/:id
+*/
 router.delete('/delete/:id',function (req, res) {
   var id_img = req.params.id;
   Imagen.remove({"_id":id_img},function (err) {
@@ -55,6 +72,10 @@ router.delete('/delete/:id',function (req, res) {
   });
 });
 
+/* Servicio Web: Entrada al formato de actualización de los datos de la publicación.
+     Método: GET
+     URI: /edit/:id
+*/
 router.get('/edit/:id', ensureAuthenticated, function (req, res) {
   var id_img = req.params.id;
   Imagen.findOne({"_id":id_img},function (err, image) {
@@ -62,6 +83,10 @@ router.get('/edit/:id', ensureAuthenticated, function (req, res) {
   });
 });
 
+/* Servicio Web: Modifica los campos que se hayan cambiado en la publicación.
+     Método: POST
+     URI: /edit/:id
+*/
 router.post('/edit/:id', function (req, res) {
   console.log(req.body.titulo);
   var private = false;
@@ -80,6 +105,10 @@ router.post('/edit/:id', function (req, res) {
   });
 });
 
+/* Servicio Web: Almacena en la base de datos la referencia a la imagen junto con sus atributos.
+     Método: POST
+     URI: /upload
+*/
 router.post("/upload", upload.single('imagen'), function(req, res){
 
   var private = false;
