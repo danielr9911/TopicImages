@@ -7,6 +7,7 @@ var router = express.Router();
 var upload = multer({dest:"./uploads"});
 var Imagen = mongoose.model('Imagen');
 
+var config = require('./config/config');
 
 cloudinary.config({
   cloud_name: "dani9911",
