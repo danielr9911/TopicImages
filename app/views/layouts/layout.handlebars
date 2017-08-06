@@ -11,14 +11,14 @@
     <nav>
       <ul class="nav nav-pills pull-right">
         {{#if user}}
-          <li role="presentation"><a href="/public">Contenido público</a></li>
-          <li role="presentation"><a href="/perfil">Mi contenido</a></li>
-          <li role="presentation"><a href="/upload">Subir</a></li>
-          <li role="presentation"><a href="/account">Cuenta</a></li>
-          <li role="presentation"><a href="/logout">Logout</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/public">Contenido público</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/perfil">Mi contenido</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/upload">Subir</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/account">Cuenta</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/logout">Logout</a></li>
         {{else}}
-          <li role="presentation"><a href="/login">Login</a></li>
-          <li role="presentation"><a href="/register">Register</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/login">Login</a></li>
+          <li role="presentation"><a href="{{baseUrl}}/register">Register</a></li>
         {{/if}}
       </ul>
     </nav>

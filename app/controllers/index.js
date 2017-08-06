@@ -7,7 +7,7 @@ module.exports = function (app) {
 
 // Get Homepage
 router.get('/', function(req, res){
-  res.render('index');
+  res.render('index', {baseUrl: config.baseUrl});
 });
 
 

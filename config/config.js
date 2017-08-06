@@ -4,6 +4,7 @@ var path = require('path'),
 
 var config = {
   development: {
+    baseUrl: "/topicimages/",
     root: rootPath,
     app: {
       name: 'topicimages'
@@ -13,6 +14,7 @@ var config = {
   },
 
   test: {
+    baseUrl: "/topicimages/",
     root: rootPath,
     app: {
       name: 'topicimages'
@@ -22,6 +24,7 @@ var config = {
   },
 
   production: {
+    baseUrl: "/topicimages/",
     root: rootPath,
     app: {
       name: 'topicimages'
