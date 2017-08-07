@@ -109,7 +109,7 @@ passport.deserializeUser(function(id, done) {
   URI: /login
 */
 router.post('/login',
-  passport.authenticate('local', {successRedirect:'/topicimages/', failureRedirect:'/topicimages/login',failureFlash: true}),
+  passport.authenticate('local', {successRedirect:'/public', failureRedirect:'/login',failureFlash: true}),
   function(req, res) {
     res.redirect('/public', {baseUrl: config.baseUrl});
   });
