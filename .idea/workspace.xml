@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0454ef48-7d24-415e-827d-261e4f35342f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/account.handlebars" afterPath="$PROJECT_DIR$/app/views/account.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit.handlebars" afterPath="$PROJECT_DIR$/app/views/edit.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users.js" afterPath="$PROJECT_DIR$/app/controllers/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/layout.handlebars" afterPath="$PROJECT_DIR$/app/views/layouts/layout.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.handlebars" afterPath="$PROJECT_DIR$/app/views/login.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/public.handlebars" afterPath="$PROJECT_DIR$/app/views/public.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.handlebars" afterPath="$PROJECT_DIR$/app/views/register.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/upload.handlebars" afterPath="$PROJECT_DIR$/app/views/upload.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.js" afterPath="$PROJECT_DIR$/config/config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +26,8 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+            <state relative-caret-position="257">
+              <caret line="111" column="64" lean-forward="false" selection-start-line="111" selection-start-column="64" selection-end-line="111" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -43,7 +37,17 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/layout.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="images.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/images.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-520">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,6 +75,7 @@
       <find>save</find>
       <find>redirect</find>
       <find>action</find>
+      <find>post</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,7 +104,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/controllers/images.js" />
         <option value="$PROJECT_DIR$/app/controllers/index.js" />
-        <option value="$PROJECT_DIR$/app/controllers/users.js" />
         <option value="$PROJECT_DIR$/config/config.js" />
         <option value="$PROJECT_DIR$/app/views/account.handlebars" />
         <option value="$PROJECT_DIR$/app/views/edit.handlebars" />
@@ -107,6 +111,7 @@
         <option value="$PROJECT_DIR$/app/views/public.handlebars" />
         <option value="$PROJECT_DIR$/app/views/register.handlebars" />
         <option value="$PROJECT_DIR$/app/views/upload.handlebars" />
+        <option value="$PROJECT_DIR$/app/controllers/users.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/layout.handlebars" />
       </list>
     </option>
@@ -163,31 +168,13 @@
             <path>
               <item name="TopicImages" type="b2602c69:ProjectViewProjectNode" />
               <item name="TopicImages" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TopicImages" type="b2602c69:ProjectViewProjectNode" />
               <item name="TopicImages" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicImages" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicImages" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicImages" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicImages" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicImages" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicImages" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -315,12 +302,12 @@
       <workItem from="1501854158961" duration="1960000" />
       <workItem from="1501856455217" duration="12998000" />
       <workItem from="1502046897756" duration="7282000" />
-      <workItem from="1502133233631" duration="4249000" />
+      <workItem from="1502133233631" duration="5226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134531000" />
+    <option name="totallyTimeSpent" value="135508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/images.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-860">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -734,10 +713,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/images.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        <state relative-caret-position="257">
+          <caret line="111" column="64" lean-forward="false" selection-start-line="111" selection-start-column="64" selection-end-line="111" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -745,7 +732,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/layout.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding />
         </state>
       </provider>
