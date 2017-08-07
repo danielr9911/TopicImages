@@ -4,7 +4,7 @@
     <div class="alert alert-danger">{{msg}}</div>
   {{/each}}
 {{/if}}
-<form method="post" action="{{baseUrl}}/register">
+<form method="post" action="{{baseUrl}}register">
   <div class="form-group">
     <label>Nombre</label>
     <input type="text" class="form-control" placeholder="Nombre" name="name">
@@ -28,7 +28,7 @@
   <button type="submit" class="btn btn-default">Registrar</button>
 
   <div class="text-center">
-    <label class='small text-center'>¿Tienes una cuenta? <a href="/login"> Ingresa </a></label>
+    <label class='small text-center'>¿Tienes una cuenta? <a href="{{baseUrl}}login"> Ingresa </a></label>
   </div>
 
 </form>
