@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
-var config = require('./config/config');
+var config = require('../../config/config');
 var mongoose = require('mongoose');
 
 module.exports = function (app) {
