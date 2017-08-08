@@ -15,6 +15,8 @@ module.exports = function(app, config) {
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
+
+
   // View Engine
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'handlebars');
